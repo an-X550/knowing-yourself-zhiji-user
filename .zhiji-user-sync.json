@@ -1,0 +1,33 @@
+{
+  "sourceRepo": "knowing-yourself",
+  "managedBy": "scripts/export-zhiji-user.ps1",
+  "syncModel": "single-source-of-truth",
+  "variantSourcePath": "packaging/zhiji-user-overlay",
+  "managedPaths": [
+    ".claude",
+    ".codex",
+    "docs",
+    "examples",
+    "perspectives",
+    "README.md",
+    ".gitignore",
+    "scripts",
+    "关于我/README.md",
+    "关于我/templates",
+    "LICENSE"
+  ],
+  "seedOnlyPaths": [
+    "关于我/career-projects.md",
+    "关于我/core-profile.md",
+    "关于我/current.md",
+    "关于我/health-habits.md",
+    "关于我/relationships.md",
+    "关于我/verified-patterns.md"
+  ],
+  "neverTouchPaths": [
+    "日志",
+    "复盘",
+    "关于我/Analysis",
+    ".workbuddy"
+  ]
+}
