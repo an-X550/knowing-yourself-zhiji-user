@@ -1,0 +1,18 @@
+.workbuddy/
+
+# User journal inputs
+/日志/*.md
+!/日志/.gitkeep
+
+# Generated review outputs
+/复盘/**/*.md
+!/复盘/**/.gitkeep
+
+# Private runtime context files
+/关于我/*.md
+!/关于我/README.md
+!/关于我/.gitkeep
+!/关于我/templates/
+!/关于我/templates/*.template.md
+/关于我/Analysis/*.md
+!/关于我/Analysis/.gitkeep
