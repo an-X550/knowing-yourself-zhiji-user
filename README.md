@@ -6,6 +6,12 @@
 
 本仓库由上级项目 `knowing-yourself` 的导出流程刷新。共享逻辑（如 `.claude/`、`examples/`、`perspectives/` 与公共方法文档）应优先回补上级项目，再重新导出到这里；只属于分发体验的内容再直接维护在用户版覆盖层中。
 
+如果你需要从上级项目刷新当前用户版，请在上级仓库根目录执行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/export-zhiji-user.ps1
+```
+
 ## 这个项目能做什么
 
 - 分析单篇日志，给你一个更清晰的洞察和一个能马上尝试的动作

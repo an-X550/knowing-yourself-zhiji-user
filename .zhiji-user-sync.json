@@ -1,6 +1,7 @@
 {
   "sourceRepo": "knowing-yourself",
   "managedBy": "scripts/export-zhiji-user.ps1",
+  "refreshCommand": "powershell -ExecutionPolicy Bypass -File scripts/export-zhiji-user.ps1",
   "syncModel": "single-source-of-truth",
   "variantSourcePath": "packaging/zhiji-user-overlay",
   "managedPaths": [
