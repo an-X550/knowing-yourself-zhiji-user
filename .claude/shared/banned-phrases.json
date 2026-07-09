@@ -1,0 +1,38 @@
+{
+  "_schema": "banned_phrases.v1",
+  "_source": "docs/analysis-standards.md 五、聊天摘要质量门",
+  "_purpose": "机器可读镜像，供 workflow 摘要质量门和提交前一致性验证使用。",
+  "_sync": [
+    "修改 common 或 yearly_extra 时，同步 docs/analysis-standards.md 的禁用词说明。",
+    "同步 .claude/shared/runtime-contracts.js 的 BANNED_PHRASE_GROUPS；提交前验证必须拦截数组漂移。"
+  ],
+  "_consumers": [
+    ".claude/shared/runtime-contracts.js",
+    ".claude/workflows/weekly-review.js",
+    ".claude/workflows/monthly-review.js",
+    ".claude/workflows/yearly-review.js"
+  ],
+  "common": [
+    "有波动",
+    "总体还行",
+    "有好有坏",
+    "表现不错",
+    "还可以",
+    "情绪稳定",
+    "整体良好",
+    "继续努力",
+    "保持下去",
+    "有待提高",
+    "需要改进",
+    "要加强",
+    "多注意",
+    "总体不错",
+    "还可以吧",
+    "还行吧"
+  ],
+  "yearly_extra": [
+    "这一年有成长",
+    "进步很大",
+    "收获很多"
+  ]
+}

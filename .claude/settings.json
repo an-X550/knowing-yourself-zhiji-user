@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "幸福日志|开心的事情|充实的事情|待改进|感谢的人|思考.{0,20}改进|[Tt]o[Dd]o[Ll]ist",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "skill log"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Write",
+      "Bash"
+    ],
+    "deny": []
+  }
+}
