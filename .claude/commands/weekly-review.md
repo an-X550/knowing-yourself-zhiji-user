@@ -4,6 +4,7 @@ allowed-tools:
   - Task
   - Glob
   - Read
+  - Workflow
 ---
 
 # Weekly Review Command

@@ -89,8 +89,19 @@ export function formatAnalyses(perspectives, analyses) {
 
 export function extractChatSummary(result) {
   if (!result || typeof result !== 'string') return ''
-  var chatMatch = result.match(/## 聊天摘要\n\n([\s\S]*?)(?=\n---\n\[聊天摘要结束\])/)
-  return chatMatch ? chatMatch[1].trim() : ''
+  var patterns = [
+    /## 聊天摘要\s*\n\s*\n([\s\S]*?)(?=\n---\n\[聊天摘要结束[^\]]*\])/,
+    /# 聊天摘要\s*\n\s*\n([\s\S]*?)(?=\n---\n\[聊天摘要结束[^\]]*\])/,
+    /## 聊天摘要\s*\n\s*\n([\s\S]*?)(?=\n## )/,
+    /# 聊天摘要\s*\n\s*\n([\s\S]*?)(?=\n## )/,
+  ]
+
+  for (var i = 0; i < patterns.length; i++) {
+    var chatMatch = result.match(patterns[i])
+    if (chatMatch) return chatMatch[1].trim()
+  }
+
+  return ''
 }
 
 export function validateChatSummary(summaryText, options) {

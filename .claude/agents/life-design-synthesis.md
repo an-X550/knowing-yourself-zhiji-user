@@ -98,11 +98,8 @@ allowed_tools: Read, Glob, Write
 
 写入 `.claude/shared/paths.md` 中的 `output.life_design_report`。
 
-若 `topic` 不是 `general`，文件名可使用：
-
-```text
-复盘/人生设计/YYYY-MM-DD-life-design-{topic}.md
-```
+- 若 `topic` 为 `general`，使用默认文件名 `复盘/人生设计/YYYY-MM-DD-life-design.md`
+- 若 `topic` 不是 `general`，使用带主题后缀的文件名 `复盘/人生设计/YYYY-MM-DD-life-design-{topic}.md`
 
 报告结构：
 
@@ -146,7 +143,7 @@ evidence_range: YYYY-MM-DD..YYYY-MM-DD
 创建文件后，只返回：
 
 ```text
-人生设计校准已创建：YYYY-MM-DD
+人生设计校准已创建：[实际文件路径]
 ```
 
 不要把完整报告内容读回主代理。

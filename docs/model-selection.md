@@ -13,7 +13,7 @@
 
 - `Claude`：优先推荐用于 `/monthly-review`、`/yearly-review`、`/life-design`。优点是长文综合、中文语感和边界感通常更稳。
 - `GPT`：推荐用于 `/project-review`、`/weekly-review`、`/monthly-review`。优点是结构清晰、分解能力强，适合项目型和复盘型输出。
-- `DeepSeek`：推荐用于 `/daily-review`、`/journal-coach` 或草稿版复盘。优点是成本低、适合高频调用，但高抽象和长链路任务稳定性通常弱一些。
+- `DeepSeek`：推荐用于 `/daily-review` 或草稿版复盘。优点是成本低、适合高频调用，但高抽象和长链路任务稳定性通常弱一些。
 - `Kimi`、`GLM`、`Gemini` 等其他模型：原则上都可接入，建议先用同一批日志做一次对比测试，再决定是否作为长期默认模型。
 
 ## 简单选择

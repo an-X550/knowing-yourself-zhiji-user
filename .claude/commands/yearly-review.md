@@ -4,6 +4,7 @@ allowed-tools:
   - Task
   - Glob
   - Read
+  - Workflow
 ---
 
 # 年度复盘命令
@@ -31,7 +32,7 @@ allowed-tools:
 
 检查月度综合报告。按顺序检查：
 1. `.claude/shared/paths.md` 的 `output.monthly_report`
-2. `月志/YYYY-MM.md`
+2. `paths.md` 中标记的兼容来源（如存在）
 
 至少需要12份中的6份月度报告才能做有意义的年度回顾。
 
@@ -55,7 +56,7 @@ Workflow({ name: "yearly-review", args: { year: "YYYY" } })
 ```
 YYYY年度回顾完成！
 
-完整报告：output.yearly_report
+完整报告：[实际文件路径]
 ```
 
 ## 错误处理

@@ -4,6 +4,7 @@ allowed-tools:
   - Task
   - Glob
   - Read
+  - Workflow
 ---
 
 # 月度复盘命令

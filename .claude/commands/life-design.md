@@ -65,7 +65,7 @@ prompt: Life design {mode} {topic}
 agent 创建报告后，向用户返回：
 
 ```text
-人生设计校准已完成：复盘/人生设计/YYYY-MM-DD-life-design.md
+人生设计校准已完成：[实际文件路径]
 ```
 
 如果 agent 因关键材料不足而提出缺口问题，先展示问题并等待用户回答，不生成报告。

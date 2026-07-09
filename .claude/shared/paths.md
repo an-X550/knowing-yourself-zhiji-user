@@ -43,7 +43,7 @@ last_updated: 2026-07-08
 | `output.monthly_report` | `复盘/每月复盘/YYYY-MM.md` | `monthly-synthesis` |
 | `output.project_report` | `复盘/项目复盘/YYYY-MM-DD-project-{project}.md` | `project-synthesis` |
 | `output.yearly_report` | `复盘/年度回顾/YYYY-annual-review.md` | `yearly-synthesis` |
-| `output.life_design_report` | `复盘/人生设计/YYYY-MM-DD-life-design.md` | `life-design-synthesis` |
+| `output.life_design_report` | `复盘/人生设计/YYYY-MM-DD-life-design[-{topic}].md` | `life-design-synthesis` |
 | `output.perspective_analysis` | `关于我/Analysis/{视角}/YYYY-MM-{视角}.md` | `monthly-processor` |
 
 ## 上下文文件
