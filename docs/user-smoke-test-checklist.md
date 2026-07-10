@@ -7,13 +7,13 @@
 确认你已经：
 
 1. 在 Claude Code / Codex 中打开了本项目目录
-2. 能看到 [README.md](</C:/Users/panda/.claude/skills/知己/zhiji-user/README.md>)
+2. 能看到 [README.md](../README.md)
 3. 准备好了测试材料
 
 可选测试材料：
 
-- 单日测试：[`examples/demo/sample-journal.md`](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/demo/sample-journal.md>)
-- 周 / 月 / 项目 / 人生设计联测：[`examples/beta/README.md`](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/beta/README.md>)
+- 单日测试：[`examples/demo/sample-journal.md`](../examples/demo/sample-journal.md)
+- 周 / 月 / 项目 / 人生设计联测：[`examples/beta/README.md`](../examples/beta/README.md)
 
 ## 一、最短可用路径
 
@@ -21,7 +21,7 @@
 
 操作：
 
-1. 打开 [`examples/demo/sample-journal.md`](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/demo/sample-journal.md>)
+1. 打开 [`examples/demo/sample-journal.md`](../examples/demo/sample-journal.md)
 2. 复制任意一天内容到对话
 3. 输入 `/review`
 
@@ -50,7 +50,7 @@
 
 建议材料：
 
-- 使用 [`examples/beta/logs/2026-07月日志.md`](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/beta/logs/2026-07月日志.md>) 放入 `日志/`
+- 使用 [`examples/beta/logs/2026-07月日志.md`](../examples/beta/logs/2026-07月日志.md) 放入 `日志/`
 
 操作：
 
@@ -82,7 +82,7 @@
 
 建议材料：
 
-- [`examples/beta/project-review-brief.md`](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/beta/project-review-brief.md>)
+- [`examples/beta/project-review-brief.md`](../examples/beta/project-review-brief.md)
 
 操作：
 
@@ -100,7 +100,7 @@
 建议材料：
 
 - 先至少跑过一次周报或月报
-- 再使用 [`examples/beta/life-design-topic.md`](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/beta/life-design-topic.md>)
+- 再使用 [`examples/beta/life-design-topic.md`](../examples/beta/life-design-topic.md)
 
 操作：
 

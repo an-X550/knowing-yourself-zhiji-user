@@ -12,9 +12,9 @@
 
 ## 二、文档入口检查
 
-- [ ] [README.md](</C:/Users/panda/.claude/skills/知己/zhiji-user/README.md:1>) 与实际命令行为一致
+- [ ] [README.md](../README.md) 与实际命令行为一致
 - [ ] `README.md` 已覆盖用户获取项目、首次使用和手动验收入口
-- [ ] 示例日志 [examples/demo/sample-journal.md](</C:/Users/panda/.claude/skills/知己/zhiji-user/examples/demo/sample-journal.md:1>) 可直接用于首测
+- [ ] 示例日志 [examples/demo/sample-journal.md](../examples/demo/sample-journal.md) 可直接用于首测
 - [ ] 文档不再引用缺失文件
 
 ## 三、命令级验收
@@ -61,8 +61,8 @@
 
 ## 五、Hook 与自动入口检查
 
-- [ ] [`.claude/settings.json`](</C:/Users/panda/.claude/skills/知己/zhiji-user/.claude/settings.json:1>) 的 matcher 与首用示例格式一致
-- [ ] [`.codex/hooks.json`](</C:/Users/panda/.claude/skills/知己/zhiji-user/.codex/hooks.json:1>) 不会无条件误触发
+- [ ] [`.claude/settings.json`](../.claude/settings.json) 的 matcher 与首用示例格式一致
+- [ ] [`.codex/hooks.json`](../.codex/hooks.json) 的 matcher 与 `.claude/settings.json` 保持一致，且不会无条件误触发
 
 ## 六、发布判定
 
