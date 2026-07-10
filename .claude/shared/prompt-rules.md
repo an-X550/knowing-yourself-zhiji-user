@@ -1,6 +1,6 @@
 ---
 created: 2026-07-07
-last_updated: 2026-07-09
+last_updated: 2026-07-10
 purpose: Shared prompt constraints for runtime agents
 ---
 
@@ -34,7 +34,7 @@ purpose: Shared prompt constraints for runtime agents
 
 | 场景 | 必读契约 |
 |------|----------|
-| 日反馈 | `.claude/shared/contracts/daily-feedback.md` + `.claude/shared/contracts/evidence-and-verification.md` |
+| 日志粘贴 / 日反馈 | `.claude/shared/contracts/journal-input.md` + `.claude/shared/contracts/daily-feedback.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 周/月/项目复盘综合 | `.claude/shared/contracts/review-synthesis.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 证据、验证沉淀、周/月消费 | `.claude/shared/contracts/evidence-and-verification.md` |
 
@@ -58,7 +58,7 @@ purpose: Shared prompt constraints for runtime agents
 
 ## 七、质量门槛
 
-1. 日反馈遵守 `.claude/shared/contracts/daily-feedback.md` 的 D0-D6 轻量质量门。
+1. 日志输入先遵守 `.claude/shared/contracts/journal-input.md` 的证据卡与 A-D 降级规则；日反馈再遵守 `.claude/shared/contracts/daily-feedback.md` 的 D0-D6 轻量质量门。
 2. 周/月/项目复盘综合遵守 `.claude/shared/contracts/review-synthesis.md` 的六问、方向锚点和主题综合契约。
 3. 证据与验证沉淀遵守 `.claude/shared/contracts/evidence-and-verification.md`；没有证据时标注“证据不足”，不要补全故事。
 4. 月度、周度、年度摘要仍遵守 `docs/analysis-standards.md` 的聊天摘要质量门和禁用模糊语。
