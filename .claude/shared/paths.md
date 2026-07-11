@@ -1,7 +1,7 @@
 ---
 type: shared_config
 purpose: 供 agent/workflow/command 统一读取的命名路径契约。所有运行时路径都应先查这里。
-last_updated: 2026-07-08
+last_updated: 2026-07-11
 ---
 
 # 共享路径约定
@@ -27,6 +27,9 @@ last_updated: 2026-07-08
 | `context.core_profile` | `关于我/core-profile.md` | 核心画像 |
 | `context.current` | `关于我/current.md` | 当前状态 |
 | `context.verified_patterns` | `关于我/verified-patterns.md` | 已验证 / 已证伪 / 待验证的行为模式 |
+| `context.thinking_dir` | `关于我/思考/` | 用户确认后的主题思考根目录 |
+| `context.thinking_index` | `关于我/思考/index.md` | 主题、别名、核心问题与更新时间的轻量路由索引 |
+| `context.thinking_topic` | `关于我/思考/{topic}.md` | 按用户确认主题动态创建的思考文件，不是预置分类 |
 | `standards.analysis` | `docs/analysis-standards.md` | 分析质量标准 |
 | `standards.review_methodology` | `docs/methodology-review.md` | 复盘方法论 |
 | `perspective.definition` | `perspectives/{视角名}.md` | 视角定义 |
@@ -53,6 +56,8 @@ last_updated: 2026-07-08
 | `context.core_profile` | `关于我/core-profile.md` | 标注“画像缺失”，继续使用日志证据 |
 | `context.current` | `关于我/current.md` | 标注“当前状态缺失”，不读旧路径 |
 | `context.verified_patterns` | `关于我/verified-patterns.md` | 缺失时由调用方按标准模板创建 |
+| `context.thinking_index` | `关于我/思考/index.md` | 缺失时不预读主题；首次确认保存时创建目录与空索引 |
+| `context.thinking_topic` | `关于我/思考/{topic}.md` | 缺失时只在用户确认新主题摘要后创建 |
 
 ## 已废弃路径
 

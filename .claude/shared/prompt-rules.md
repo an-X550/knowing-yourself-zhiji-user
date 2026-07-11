@@ -1,6 +1,6 @@
 ---
 created: 2026-07-07
-last_updated: 2026-07-10
+last_updated: 2026-07-11
 purpose: Shared prompt constraints for runtime agents
 ---
 
@@ -37,6 +37,7 @@ purpose: Shared prompt constraints for runtime agents
 | 日志粘贴 / 日反馈 | `.claude/shared/contracts/journal-input.md` + `.claude/shared/contracts/daily-feedback.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 周/月/项目复盘综合 | `.claude/shared/contracts/review-synthesis.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 证据、验证沉淀、周/月消费 | `.claude/shared/contracts/evidence-and-verification.md` |
+| 主动思考探讨 / 确认沉淀 / 相关问题召回 | `.claude/shared/contracts/topic-thinking.md` |
 
 任务契约只承载运行时必需的输出和质量规则；agent 仍保留自己的输入、执行步骤、错误处理和最终输出责任。
 
@@ -75,3 +76,9 @@ purpose: Shared prompt constraints for runtime agents
 1. 优化提示词时不得改变命令入口、参数格式、输出路径、输出文件名、报告章节结构或 workflow 编排。
 2. 可以删除重复解释、历史背景、旧路径叙述和跨 agent 复制的规则。
 3. 保留每个 agent 独有的职责、输入格式、处理步骤、错误处理和最终输出契约。
+
+## 十、主题思考入口
+
+1. 用户主动探讨长期问题并形成可沉淀认识时，读取主题思考契约；未经确认不写入。
+2. 普通提问涉及用户既有观点、长期困惑或价值判断时，先检查 `context.thinking_index`；没有明显匹配则不读取详细主题。
+3. 不从日志自动摘录，不使用关键词 hook 覆盖任意主题，不预读全部主题文件。

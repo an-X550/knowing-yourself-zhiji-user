@@ -14,5 +14,9 @@
 !/关于我/.gitkeep
 !/关于我/templates/
 !/关于我/templates/*.template.md
+
+# Dynamically generated topic-thinking library
+/关于我/思考/
+
 /关于我/Analysis/*.md
 !/关于我/Analysis/.gitkeep
