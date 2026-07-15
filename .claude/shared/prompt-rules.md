@@ -38,6 +38,7 @@ purpose: Shared prompt constraints for runtime agents
 | 周/月/项目复盘综合 | `.claude/shared/contracts/review-synthesis.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 证据、验证沉淀、周/月消费 | `.claude/shared/contracts/evidence-and-verification.md` |
 | 主动思考探讨 / 确认沉淀 / 相关问题召回 | `.claude/shared/contracts/topic-thinking.md` |
+| 显式第一性原理复核 / 压缩 / 质疑既有分析 | `.claude/shared/contracts/first-principles-analysis.md` |
 
 任务契约只承载运行时必需的输出和质量规则；agent 仍保留自己的输入、执行步骤、错误处理和最终输出责任。
 
@@ -76,6 +77,7 @@ purpose: Shared prompt constraints for runtime agents
 1. 优化提示词时不得改变命令入口、参数格式、输出路径、输出文件名、报告章节结构或 workflow 编排。
 2. 可以删除重复解释、历史背景、旧路径叙述和跨 agent 复制的规则。
 3. 保留每个 agent 独有的职责、输入格式、处理步骤、错误处理和最终输出契约。
+4. 显式第一性原理复核可以改变分析深度与措辞，但不得改变命令接口、路径、稳定章节或 workflow 编排。
 
 ## 十、主题思考入口
 
