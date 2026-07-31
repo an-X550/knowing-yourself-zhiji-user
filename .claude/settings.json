@@ -9,6 +9,15 @@
             "command": "skill log"
           }
         ]
+      },
+      {
+        "matcher": "收录到\\s*收藏吃灰库(\\s*[/／]\\s*[^：:，,\\s]+|的[^：:，,\\s]+目录)?",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "skill collection"
+          }
+        ]
       }
     ]
   },
