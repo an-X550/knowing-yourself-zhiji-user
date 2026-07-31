@@ -15,3 +15,7 @@
 ## 第一性原理复核
 
 用户明确要求“依据第一性原理分析”、复核或压缩既有结论时，读取 `.claude/shared/contracts/first-principles-analysis.md`。复核不扩读全部历史材料，仍遵守隐私、证据和确认写入边界。
+
+## Codex 自然语言复盘入口
+
+当用户以自然语言请求周报、月报或项目复盘时，读取并执行 `.claude/shared/contracts/codex-natural-language-routing.md`。`.claude/` 仍是唯一运行真相；Codex 不以 Claude slash command、`Workflow` 或 `Task` 为运行前置条件。
