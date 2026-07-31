@@ -37,7 +37,8 @@ purpose: Shared prompt constraints for runtime agents
 | 日志粘贴 / 日反馈 | `.claude/shared/contracts/journal-input.md` + `.claude/shared/contracts/daily-feedback.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 周/月/项目复盘综合 | `.claude/shared/contracts/review-synthesis.md` + `.claude/shared/contracts/evidence-and-verification.md` |
 | 证据、验证沉淀、周/月消费 | `.claude/shared/contracts/evidence-and-verification.md` |
-| 主动思考探讨 / 确认沉淀 / 相关问题召回 | `.claude/shared/contracts/topic-thinking.md` |
+| 主动思考探讨 / 相关问题召回 | `.claude/shared/contracts/topic-thinking.md`；首次讨论只读此文件 |
+| 用户明确确认主题沉淀 / 更新 / 全量审查 | `.claude/shared/contracts/topic-thinking-persistence.md`；不得在首次讨论读取 |
 | 显式第一性原理复核 / 压缩 / 质疑既有分析 | `.claude/shared/contracts/first-principles-analysis.md` |
 
 任务契约只承载运行时必需的输出和质量规则；agent 仍保留自己的输入、执行步骤、错误处理和最终输出责任。
