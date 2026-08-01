@@ -18,4 +18,4 @@
 
 ## Codex 自然语言复盘入口
 
-当用户以自然语言请求周报、月报或项目复盘时，读取并执行 `.claude/shared/contracts/codex-natural-language-routing.md`。`.claude/` 仍是唯一运行真相；Codex 不以 Claude slash command、`Workflow` 或 `Task` 为运行前置条件。
+当用户以自然语言请求周报、月报或项目复盘时，读取并执行 `.claude/shared/contracts/codex-natural-language-routing.md`。当用户以自然语言询问下一步、遗漏、该更新什么或是否该复盘时，也读取该契约并执行闭环缺口检查。前者的明确范围请求直达既有分析；后者只返回一条手动建议。`.claude/` 仍是唯一运行真相；Codex 不以 Claude slash command、`Workflow` 或 `Task` 为运行前置条件。

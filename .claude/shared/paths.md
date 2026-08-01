@@ -49,6 +49,7 @@ last_updated: 2026-07-11
 | `output.project_report` | `复盘/项目复盘/YYYY-MM-DD-project-{project}.md` | `project-synthesis` |
 | `output.yearly_report` | `复盘/年度回顾/YYYY-annual-review.md` | `yearly-synthesis` |
 | `output.life_design_report` | `复盘/人生设计/YYYY-MM-DD-life-design[-{topic}].md` | `life-design-synthesis` |
+| `output.readiness_delivery_state` | `复盘/.readiness-delivery-state.md` | `review-readiness-checker` 的 delivery 模式 |
 | `output.perspective_analysis` | `关于我/Analysis/{视角}/YYYY-MM-{视角}.md` | `monthly-processor` |
 
 ## 上下文文件

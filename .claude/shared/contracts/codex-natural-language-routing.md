@@ -1,5 +1,9 @@
 ---
 type: shared_runtime_contract
+manual_readiness_route: ".claude/commands/review.md -> .claude/agents/review-readiness-checker.md"
+manual_readiness_max_recommendations: 1
+manual_readiness_writes: false
+manual_readiness_reports: false
 purpose: 让 Codex 通过自然语言复用既有周报、月报和项目复盘综合规则。
 last_updated: 2026-07-31
 ---
@@ -31,6 +35,16 @@ last_updated: 2026-07-31
 | `对 X 做项目复盘` / `X 优化验收` | `.claude/commands/project-review.md` → `.claude/agents/project-synthesis.md` → `.claude/shared/contracts/review-synthesis.md` → `.claude/shared/contracts/evidence-and-verification.md` | `output.project_report`：`复盘/项目复盘/YYYY-MM-DD-project-{project}.md` |
 
 解析用户明确的项目主题、材料范围与验收口径；缺少其中会改变报告对象的信息时只追问一个问题。其余材料不足时按既有规则生成部分复盘，并显式标注证据边界。
+
+## 手动复盘前检查
+
+当用户不是要求生成某一份明确报告，而是在询问当前记录、验证沉淀或复盘是否有该补齐的下一步时，读取 `.claude/commands/review.md`，再调用 `.claude/agents/review-readiness-checker.md`。
+
+这不是固定口令。`最近有什么该补？`、`我有遗漏吗？`、`是不是该复盘了？`、`我的记录需要整理吗？`只是非穷尽示例；同类意图都进入同一检查。无参数 `/review` 也是该检查的备用入口。
+
+明确指定日期、周期、项目或人生设计的请求，直接按本契约已有对应路由执行，不先做时机检查。普通闲聊、泛泛建议或单次情绪表达不触发该检查。
+
+检查器只输出优先级最高的一条建议；若没有建议则输出空字符串。不生成报告、不写入文件、不代替用户执行建议，也不创建后台定时或提醒任务。
 
 ## 执行边界
 

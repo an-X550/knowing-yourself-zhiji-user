@@ -1,5 +1,8 @@
 ---
-description: Smart review command - one entry point for all journal analysis. Auto-detects scope or routes based on natural language input.
+description: Manual review entry that routes explicit requests or checks what one follow-up action is most valuable.
+manual_no_argument_dispatch: review-readiness-checker
+manual_readiness_writes: false
+manual_readiness_reports: false
 allowed-tools:
   - Task
   - Glob
@@ -41,9 +44,9 @@ allowed-tools:
 
 **自然语言查询**（无法匹配时）：用户可能在问具体问题，直接读日志做针对性分析。
 
-### 2. 智能检测（无参数时）
+### 2. 手动复盘前检查（无参数）
 
-检测当前日期、已有日志 / 报告和近期方向性信号，向用户提议最合适的分析。只提议，不自动执行。
+调用 `review-readiness-checker` 检测当前日期、已有日志 / 报告和近期方向性信号。只输出优先级最高的一条建议；无建议时不输出内容。不生成报告、不写入文件、不自动执行。
 
 如果当前消息本身已经包含日志内容：
 
@@ -51,12 +54,7 @@ allowed-tools:
 2. 明显是同一周的多日材料 → 优先提议或路由到周复盘
 3. 明显是整月汇总 / 多周材料 → 优先提议或路由到月复盘
 
-1. 月初 1-5 号 + 上月 ≥10 天日志 + 上月报告不存在 → 提议月度复盘
-2. 周一 / 周二 + 上周 ≥3 天日志 + 上周报告不存在 → 提议周度复盘
-3. 1 月初 + 去年 ≥6 份月报 + 年度报告不存在 → 提议年度回顾
-4. 最近 30-90 天出现重复方向卡点、行动失效、目标-能量冲突等强信号 → 提议 `/life-design --quick`
-5. 轻微信号但证据不足 → 提醒观察，必要时使用 `/life-design --quick`
-6. 其他 → 提示可用命令
+资格条件与优先级只以 `review-readiness-checker` 为准；本入口不维护第二份检测规则。
 
 ### 3. 执行路由
 
