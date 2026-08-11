@@ -82,6 +82,8 @@ AI 应该在证据不足时降低结论强度，而不是补完故事；一次�
 
 Claude 兼容命令：`/review`、`/daily-review today`、`/journal-coach`、`/weekly-review`、`/monthly-review`、`/project-review`、`/yearly-review`、`/life-design --quick`。在 Codex 中可直接使用上表自然语言。
 
+可选的飞书/滴答结果分发默认关闭。离线验收通过后，如需把完整报告副本送到飞书、把报告中已有的合格行动送到滴答，请按 [`docs/result-distribution-setup.md`](docs/result-distribution-setup.md) 通过官方 CLI 与官方 MCP 设置；不要把密钥交给聊天或项目文件。未配置时原有本地流程不变。
+
 ## 结果保存与隐私
 
 | 目录 | 内容 |

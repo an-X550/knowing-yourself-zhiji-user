@@ -46,6 +46,16 @@ last_updated: 2026-07-31
 
 检查器只输出优先级最高的一条建议；若没有建议则输出空字符串。不生成报告、不写入文件、不代替用户执行建议，也不创建后台定时或提醒任务。
 
+## 新报告写入后的结果分发
+
+Codex 直接路由不依赖 Claude `Task` / `Workflow`。周报、月报或项目复盘综合完成后，只有本轮已向权威 output key **新写入**报告，并从解析出的实际路径**重新读取**到非空、结构合格的内容，才读取 `.claude/shared/contracts/result-distribution.md` 并执行对应 handoff：
+
+- `distribute output.weekly_report <resolved-local-path>`
+- `distribute output.monthly_report <resolved-local-path>`
+- `distribute output.project_report <resolved-local-path>`
+
+缓存命中、只读展示、源文件缺失、分析失败或写入/复读校验失败都不调用结果分发。外部失败不改变本地报告成功；分发摘要只追加到聊天，不写入报告正文。若两个渠道均返回 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。第三方结果不得放回综合提示词或触发报告改写。
+
 ## 执行边界
 
 1. Codex 直接执行综合，不调用不存在的 Claude `Workflow` / `Task` 工具。

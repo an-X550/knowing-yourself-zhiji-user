@@ -48,6 +48,21 @@ var result = await agent(
   { label: '项目复盘综合', phase: 'Synthesize', agentType: 'project-synthesis' }
 )
 
+if (!result) {
+  log('ERROR: 项目复盘综合失败，未进入结果分发。')
+  return { error: 'Synthesis failed', reportPath: reportPath }
+}
+
+// The command runner consumes this handoff only after re-reading the newly written report.
+var distribution = {
+  contract: '.claude/shared/contracts/result-distribution.md',
+  trigger: 'distribute output.project_report ' + reportPath,
+  sourcePath: reportPath,
+  newWriteVerificationRequired: true,
+  rereadNonEmptyRequired: true,
+  localSuccessUnaffected: true,
+}
+
 var summaryText = extractChatSummary(result)
 var summaryGate = validateChatSummary(summaryText)
 
@@ -64,5 +79,7 @@ return {
   project: projectName,
   mode: mode,
   status: 'complete',
+  synthesis: 'complete',
   reportPath: reportPath,
+  distribution: distribution,
 }

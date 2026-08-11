@@ -34,6 +34,21 @@ var result = await agent(
   { label: 'synthesis', phase: 'Synthesize', agentType: 'yearly-synthesis' }
 )
 
+if (!result) {
+  log('ERROR: 年度综合失败，未进入结果分发。')
+  return { error: 'Synthesis failed', reportPath: reportPath }
+}
+
+// The command runner consumes this handoff only after re-reading the newly written report.
+var distribution = {
+  contract: '.claude/shared/contracts/result-distribution.md',
+  trigger: 'distribute output.yearly_report ' + reportPath,
+  sourcePath: reportPath,
+  newWriteVerificationRequired: true,
+  rereadNonEmptyRequired: true,
+  localSuccessUnaffected: true,
+}
+
 var summaryText = extractChatSummary(result)
 var summaryGate = validateChatSummary(summaryText, { includeYearlyExtra: true })
 
@@ -46,4 +61,4 @@ if (summaryGate.ok) {
   log('→ 完整报告：' + reportPath)
 }
 
-return { year: year, status: 'complete', reportPath: reportPath }
+return { year: year, status: 'complete', synthesis: 'complete', reportPath: reportPath, distribution: distribution }

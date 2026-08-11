@@ -49,6 +49,8 @@ last_updated: 2026-07-11
 | `output.project_report` | `复盘/项目复盘/YYYY-MM-DD-project-{project}.md` | `project-synthesis` |
 | `output.yearly_report` | `复盘/年度回顾/YYYY-annual-review.md` | `yearly-synthesis` |
 | `output.life_design_report` | `复盘/人生设计/YYYY-MM-DD-life-design[-{topic}].md` | `life-design-synthesis` |
+| `output.result_distribution_config` | `复盘/.result-distribution-config.json` | 用户从示例复制后按需启用；默认不存在 |
+| `output.result_distribution_state` | `复盘/.result-distribution-state.json` | 结果分发契约按渠道记录幂等状态 |
 | `output.readiness_delivery_state` | `复盘/.readiness-delivery-state.md` | `review-readiness-checker` 的 delivery 模式 |
 | `output.perspective_analysis` | `关于我/Analysis/{视角}/YYYY-MM-{视角}.md` | `monthly-processor` |
 

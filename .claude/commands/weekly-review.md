@@ -59,6 +59,12 @@ Workflow 负责：
 - 运行 `weekly-synthesis` 综合引擎
 - 输出 `paths.md` 的 `output.weekly_report`（标题含日期范围），并在报告末尾保留 `## 用户回应区`，让用户补充 AI 没提到的重要内容、偏差判断和下周硬约束
 
+### 3.1 成功写入后的结果分发
+
+只消费 workflow 返回的 distribution handoff：综合成功后，从 `reportPath` 重新读取本次新写入的 `output.weekly_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.weekly_report <resolved-local-path>`。handoff 只消费一次，不得二次分发。分发摘要只追加到聊天，不写入报告正文；若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。综合失败、缺少报告或复读失败时不分发。
+
+这里的“本次新写入”必须由当前写入步骤明确返回成功并与 resolved-local-path 一致；不能只凭文件存在或非空证明本轮新写入，随后还必须重新读取并通过结构校验。
+
 ### 4. 报告完成
 
 ```

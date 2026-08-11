@@ -73,6 +73,7 @@ allowed-tools:
 1. **写入文件**：保存到 `paths.md` 的 `output.daily_feedback`
    - 先确保 `output.daily_feedback` 的父目录存在
    - 用 Write 写入文件（内容原样保存，不添加额外说明或自检行）
+   - 写入后立即从解析出的实际路径**重新读取**；只有文件存在、非空并仍符合日反馈最低结构，才把它视为本次新写入成功
 2. **更新验证沉淀**：读取 `paths.md` 的 `context.verified_patterns`，按 `.claude/shared/contracts/evidence-and-verification.md` 写回
    - 若文件不存在，按 `关于我/verified-patterns.md` 的标准三段表格模板创建。
    - 若本次反馈包含 `⏮️` 昨日闭环判断，把上一条反馈的 `💊 新认知` / `⚡ 明天试试` 与本次判断写入模式库。
@@ -80,14 +81,19 @@ allowed-tools:
    - `❌ 没做`：具体干预记“本次未奏效”；同类行动连续 3 次没做时降低门槛或停止重复建议。
    - `⚠️ 证据不足`：保留为“证据不足”，不升级、不证伪。
    - 明确反例先记“出现反例”，只有满足证伪条件时才移入“已证伪的假说”。
-3. **展示给用户**：将同一份反馈文本展示在对话中，并在末尾用一句话说明是否更新了 `verified-patterns.md`
-4. **投递闭环提醒**：仅在首次生成正式日反馈并完成验证沉淀后，使用 Task 调用 `review-readiness-checker`：
+3. **结果分发**：读取 `.claude/shared/contracts/result-distribution.md`，仅把上一步已确认的新写入交给 `distribute output.daily_feedback <resolved-local-path>`。外部失败不修改本地反馈或验证沉淀；分发摘要只追加到聊天，不写入报告正文。若两个渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。
+
+这里的“本次新写入”必须由当前写入步骤明确返回成功并与 resolved-local-path 一致；不能只凭文件存在或非空证明本轮新写入，随后还必须重新读取并通过结构校验。
+4. **展示给用户**：将同一份反馈文本展示在对话中，并在末尾用一句话说明是否更新了 `verified-patterns.md`；有实际分发结果时再追加契约返回的摘要
+5. **投递闭环提醒**：仅在首次生成正式日反馈并完成验证沉淀后，使用 Task 调用 `review-readiness-checker`：
    ```text
    delivery
    ```
    若返回非空文本，在日反馈展示之后单独追加该行 `🔔 提醒：...`。提醒不写入 output.daily_feedback，也不改变日反馈正文或 `verified-patterns.md`。
 
 快路径、D 级输入、无日志或分析失败不调用提醒投递。
+
+缓存命中、D 级输入、无日志或分析失败都不调用结果分发；读取已有反馈时不得把旧文件伪装成本次新写入。
 
 这样下一次日反馈可以读取上一条 `⚡ 明天试试` 的行动和预测，形成昨日闭环。
 

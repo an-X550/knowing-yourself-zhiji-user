@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "feishu": {
+    "enabled": false,
+    "folder_token": ""
+  },
+  "ticktick": {
+    "enabled": false,
+    "region": "dida365",
+    "list_name": ""
+  },
+  "result_types": {
+    "daily_feedback": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "weekly_report": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "monthly_report": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "project_report": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "yearly_report": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "life_design_report": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "thinking_topic": {
+      "feishu": false,
+      "ticktick": false
+    }
+  }
+}

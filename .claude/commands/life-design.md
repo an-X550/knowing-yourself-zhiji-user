@@ -68,7 +68,11 @@ agent 创建报告后，向用户返回：
 人生设计校准已完成：[实际文件路径]
 ```
 
-如果 agent 因关键材料不足而提出缺口问题，先展示问题并等待用户回答，不生成报告。
+返回前从实际路径重新读取本次新写入的 `output.life_design_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.life_design_report <resolved-local-path>`。分发摘要只追加到聊天，不写入报告正文；若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。外部失败不改变本地报告成功。
+
+这里的“本次新写入”必须由当前写入步骤明确返回成功并与 resolved-local-path 一致；不能只凭文件存在或非空证明本轮新写入，随后还必须重新读取并通过结构校验。
+
+如果 agent 因关键材料不足而提出缺口问题，先展示问题并等待用户回答，不生成报告，也不调用结果分发。
 
 ## 输出边界
 

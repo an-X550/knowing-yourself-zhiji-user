@@ -65,6 +65,10 @@ Workflow 负责：
 
 Workflow 会自动报告进度和最终结果。
 
+workflow 返回的 distribution handoff 只在综合成功时消费一次：从 `reportPath` 重新读取本次新写入的 `output.monthly_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.monthly_report <resolved-local-path>`；不得二次分发。分发摘要只追加到聊天，不写入报告正文。若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。综合失败、缺少报告或复读失败时不分发。
+
+这里的“本次新写入”必须由当前写入步骤明确返回成功并与 resolved-local-path 一致；不能只凭文件存在或非空证明本轮新写入，随后还必须重新读取并通过结构校验。
+
 ### 6. 报告完成
 
 综合完成后，报告：
