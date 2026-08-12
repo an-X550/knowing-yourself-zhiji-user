@@ -4,7 +4,6 @@ allowed-tools:
   - Task
   - Glob
   - Read
-  - Workflow
 ---
 
 # 年度复盘命令
@@ -32,7 +31,7 @@ allowed-tools:
 
 检查月度综合报告。按顺序检查：
 1. `.claude/shared/paths.md` 的 `output.monthly_report`
-2. `paths.md` 中标记的兼容来源（如存在）
+2. `月志/YYYY-MM.md`
 
 至少需要12份中的6份月度报告才能做有意义的年度回顾。
 
@@ -50,7 +49,7 @@ Workflow({ name: "yearly-review", args: { year: "YYYY" } })
 
 已有的代理文件（`yearly-synthesis`）保持不变——由 Workflow 脚本调用。
 
-workflow 返回的 distribution handoff 只在综合成功时消费一次：从 `reportPath` 重新读取本次新写入的 `output.yearly_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.yearly_report <resolved-local-path>`；不得二次分发。分发摘要只追加到聊天，不写入报告正文。若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。综合失败、缺少报告或复读失败时不分发。
+若本次请求明确包含“仅本地”，报告完成本地写入和复读后不调用结果分发；否则 workflow 返回的 distribution handoff 只在综合成功时消费一次：从 `reportPath` 重新读取本次新写入的 `output.yearly_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.yearly_report <resolved-local-path>`；不得二次分发。分发摘要只追加到聊天，不写入报告正文。若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。综合失败、缺少报告或复读失败时不分发。
 
 这里的“本次新写入”必须由当前写入步骤明确返回成功并与 resolved-local-path 一致；不能只凭文件存在或非空证明本轮新写入，随后还必须重新读取并通过结构校验。
 
@@ -60,7 +59,7 @@ workflow 返回的 distribution handoff 只在综合成功时消费一次：从 
 ```
 YYYY年度回顾完成！
 
-完整报告：[实际文件路径]
+完整报告：output.yearly_report
 ```
 
 ## 错误处理

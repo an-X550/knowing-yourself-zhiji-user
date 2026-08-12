@@ -4,7 +4,6 @@ allowed-tools:
   - Task
   - Glob
   - Read
-  - Workflow
 ---
 
 # Weekly Review Command
@@ -61,9 +60,15 @@ Workflow 负责：
 
 ### 3.1 成功写入后的结果分发
 
-只消费 workflow 返回的 distribution handoff：综合成功后，从 `reportPath` 重新读取本次新写入的 `output.weekly_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.weekly_report <resolved-local-path>`。handoff 只消费一次，不得二次分发。分发摘要只追加到聊天，不写入报告正文；若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。综合失败、缺少报告或复读失败时不分发。
+若本次请求明确包含“仅本地”，报告完成本地写入和复读后不调用结果分发；否则只消费 workflow 返回的 distribution handoff：综合成功后，从 `reportPath` 重新读取本次新写入的 `output.weekly_report`，确认文件存在、非空且结构合格，再读取 `.claude/shared/contracts/result-distribution.md` 并执行 `distribute output.weekly_report <resolved-local-path>`。handoff 只消费一次，不得二次分发。分发摘要只追加到聊天，不写入报告正文；若两渠道均为 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。综合失败、缺少报告或复读失败时不分发。
 
 这里的“本次新写入”必须由当前写入步骤明确返回成功并与 resolved-local-path 一致；不能只凭文件存在或非空证明本轮新写入，随后还必须重新读取并通过结构校验。
+
+飞书与 TickTick 分开处理：飞书可按既有契约立即分发；TickTick 不得在报告写入后直接创建，只展示候选。若本次请求含“仅本地”，连候选也不展示。
+
+从 `## 六、下周规划` 提取合格行动后，只显示最多 3 项 `SMART 标题｜绝对截止日期或时间`。没有候选时只输出“本次没有可直接创建的滴答任务。”，不显示空任务块。用户可用自然语言修改或删除；修改后必须重新展示一次最终整组。只有用户对最终整组明确确认后才创建；生成请求中预先说“同步到滴答”不算最终确认，含糊表达不创建。未确认候选不排队、不催办、不写入状态。
+
+周/月同一自然日合计默认最多 3 项；已创建的周/月任务占用名额。“全部创建”不自动突破，只有用户明确说“本次允许超过 3 项”才一次性覆盖默认上限。
 
 ### 4. 报告完成
 

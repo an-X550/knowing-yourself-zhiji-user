@@ -32,6 +32,7 @@ last_updated: 2026-07-11
 | `context.thinking_topic` | `关于我/思考/{topic}.md` | 按用户确认主题动态创建的思考文件，不是预置分类 |
 | `context.collection_dir` | `关于我/收藏吃灰库/` | 用户明确收录的外部有用信息根目录 |
 | `context.collection_topic` | `关于我/收藏吃灰库/{topic}/{title}.md` | 单篇收藏内容；主题由用户明确指定 |
+| `context.collection_attachment` | `关于我/收藏吃灰库/{topic}/{filename}` | 用户明确收录并先复制到对应主题目录的附件；不得直接引用项目外路径 |
 | `standards.analysis` | `docs/analysis-standards.md` | 分析质量标准 |
 | `standards.review_methodology` | `docs/methodology-review.md` | 复盘方法论 |
 | `perspective.definition` | `perspectives/{视角名}.md` | 视角定义 |

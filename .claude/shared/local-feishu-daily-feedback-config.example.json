@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "allowed_open_id": "ou_replace_with_your_open_id",
+  "lark_cli_path": "lark-cli",
+  "codex_path": "codex",
+  "state_path": "复盘/.local-feishu-daily-feedback-state.json"
+}

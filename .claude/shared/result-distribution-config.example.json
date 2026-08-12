@@ -3,12 +3,23 @@
   "enabled": false,
   "feishu": {
     "enabled": false,
-    "folder_token": ""
+    "folder_token": "",
+    "folders": {
+      "daily_feedback": "",
+      "weekly_report": "",
+      "monthly_report": "",
+      "project_report": "",
+      "yearly_report": "",
+      "life_design_report": "",
+      "thinking_topic": "",
+      "collection_root": ""
+    }
   },
   "ticktick": {
     "enabled": false,
     "region": "dida365",
-    "list_name": ""
+    "list_name": "知己行动",
+    "project_id": ""
   },
   "result_types": {
     "daily_feedback": {
@@ -36,6 +47,14 @@
       "ticktick": false
     },
     "thinking_topic": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "collection_topic": {
+      "feishu": false,
+      "ticktick": false
+    },
+    "collection_attachment": {
       "feishu": false,
       "ticktick": false
     }

@@ -48,13 +48,15 @@ last_updated: 2026-07-31
 
 ## 新报告写入后的结果分发
 
-Codex 直接路由不依赖 Claude `Task` / `Workflow`。周报、月报或项目复盘综合完成后，只有本轮已向权威 output key **新写入**报告，并从解析出的实际路径**重新读取**到非空、结构合格的内容，才读取 `.claude/shared/contracts/result-distribution.md` 并执行对应 handoff：
+Codex 直接路由不依赖 Claude `Task` / `Workflow`。本次请求明确包含“仅本地”时，报告完成本地写入和复读后不调用结果分发；否则，周报、月报或项目复盘综合完成后，只有本轮已向权威 output key **新写入**报告，并从解析出的实际路径**重新读取**到非空、结构合格的内容，才读取 `.claude/shared/contracts/result-distribution.md` 并执行对应 handoff：
 
 - `distribute output.weekly_report <resolved-local-path>`
 - `distribute output.monthly_report <resolved-local-path>`
 - `distribute output.project_report <resolved-local-path>`
 
 缓存命中、只读展示、源文件缺失、分析失败或写入/复读校验失败都不调用结果分发。外部失败不改变本地报告成功；分发摘要只追加到聊天，不写入报告正文。若两个渠道均返回 `skipped_not_configured`，不追加摘要，保持原有聊天输出不变。第三方结果不得放回综合提示词或触发报告改写。
+
+周报和月报的 Codex 直接路由与命令入口使用同一 TickTick 确认门：报告写入后只展示 `SMART 标题｜绝对截止日期或时间`，允许自然语言修改，修改后重显最终整组，只有用户明确确认后创建。生成请求中预先说“同步到滴答”只表示意图，不算确认最终整组；未确认不创建、不排队、不催办。本次请求含“仅本地”时不展示候选。项目复盘不产生滴答候选，但其本地结果和飞书分发保持不变。
 
 ## 执行边界
 
