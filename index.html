@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知己｜从一篇日志开始</title>
+  <style>
+    :root { --ink:#1c2b32; --muted:#587078; --paper:#f7f6f0; --card:#fff; --accent:#0b766e; --line:#d9e2df; --warm:#f2b84b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.7 "Microsoft YaHei", "PingFang SC", sans-serif; }
+    a { color:var(--accent); }
+    a:focus-visible, summary:focus-visible { outline:3px solid var(--warm); outline-offset:3px; border-radius:4px; }
+    .wrap { width:min(1080px, calc(100% - 40px)); margin:auto; }
+    .nav { display:flex; justify-content:space-between; gap:20px; align-items:center; padding:18px 0; }
+    .brand { font-weight:800; letter-spacing:.08em; color:var(--ink); text-decoration:none; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:18px; font-size:1rem; }
+    .nav-links a { text-decoration:none; }
+    .hero { padding:76px 0 64px; background:radial-gradient(circle at 85% 10%, #d6ede6, transparent 30%), var(--paper); }
+    .eyebrow { color:#075f59; font-weight:800; letter-spacing:.02em; font-size:clamp(1.15rem, 2.2vw, 1.35rem); line-height:1.45; }
+    h1 { max-width:760px; margin:.35em 0; font-size:clamp(2.35rem, 5.2vw, 4.2rem); line-height:1.18; letter-spacing:-.035em; overflow-wrap:normal; word-break:keep-all; }
+    h2 { margin:0 0 12px; font-size:clamp(1.55rem, 3vw, 2.35rem); line-height:1.25; }
+    h3 { margin:.1em 0 .45em; font-size:1.25rem; }
+    .lead { max-width:680px; color:var(--muted); font-size:1.15rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-block; padding:13px 22px; border:1px solid var(--accent); border-radius:999px; font-weight:700; text-decoration:none; }
+    .button.primary { color:#fff; background:var(--accent); }
+    section { padding:60px 0; }
+    .intro { max-width:750px; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:22px; }
+    .card { padding:24px; background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 4px 18px rgb(28 43 50 / 4%); }
+    .step { position:relative; padding-top:50px; }
+    .num { position:absolute; top:16px; left:20px; color:var(--accent); font-size:.95rem; font-weight:800; }
+    .tag { display:inline-block; margin-bottom:12px; padding:4px 10px; border-radius:999px; color:#73540e; background:#fff2cf; font-size:.95rem; font-weight:800; }
+    pre { margin:16px 0 0; padding:16px; overflow:auto; border-radius:12px; color:#e8f5f1; background:#18343a; font:14px/1.55 Consolas, monospace; white-space:pre-wrap; }
+    .flow { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:22px; font-weight:700; }
+    .flow span { padding:7px 11px; border-radius:8px; background:#e3f0eb; }
+    .flow b { color:var(--accent); }
+    .note { padding:20px 22px; border-left:4px solid var(--warm); background:#fff8e7; border-radius:0 12px 12px 0; }
+    details { margin-top:16px; padding:14px 18px; border:1px solid var(--line); border-radius:12px; background:#fff; }
+    summary { cursor:pointer; color:var(--ink); font-weight:700; }
+    footer { padding:30px 0 45px; border-top:1px solid var(--line); color:var(--muted); font-size:1rem; }
+    @media (max-width:760px) { .wrap { width:min(100% - 28px, 1080px); } .nav { align-items:flex-start; flex-direction:column; } .hero { padding:44px 0 48px; } h1 { max-width:12em; font-size:clamp(2.25rem, 11vw, 3.4rem); line-height:1.22; letter-spacing:-.045em; } section { padding:42px 0; } .grid { grid-template-columns:1fr; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#top">知己 ZHIJI</a>
+    <nav class="nav-links" aria-label="页面导航"><a href="#start">首次使用</a><a href="#features">主要功能</a><a href="#extensions">可选集成</a><a href="#privacy">隐私与边界</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">帮你把个人日志变成下一步行动</div>
+        <h1>把一件真实的事写下来。<br>找一个你能试的下一步。</h1>
+        <p class="lead">例如，你想完成一件事却一直没开始、情绪反复，或不知道最近为什么总是很累。知己会根据你的记录，帮你想一个简单做法；下一次你再补充试了没有、发生了什么。</p>
+        <div class="actions"><a class="button primary" href="#start">查看首次使用步骤</a><a class="button" href="guide.html">查看详细使用说明</a></div>
+      </div>
+    </section>
+
+    <section id="start"><div class="wrap">
+      <div class="eyebrow">第一次使用</div><h2>写一件最近发生的事；下次补充你试过后的结果</h2>
+      <p class="intro">选择一件你想弄明白或想改变的具体事情：例如“想写方案却一直在整理资料”“这周总是拖到很晚才睡”或“和同事沟通后一直不舒服”。先写下发生了什么、你当时怎么做；AI 会给你一个简单建议。下一次记录时，再写清你有没有试、结果如何。这样才能判断建议是否适合自己。</p>
+      <div class="grid">
+        <article class="card step"><span class="num">01</span><h3>保存整个“知己用户版”文件夹</h3><p>下载或复制整个 <code>zhiji-user</code> 文件夹。不要只保存这一页；里面还有让 AI 正确工作的说明和保存笔记的位置。</p></article>
+        <article class="card step"><span class="num">02</span><h3>用 AI 工具打开整个目录</h3><p>安装 Codex 或 Claude Code，然后用它打开整个 <code>zhiji-user</code> 目录。工具需要能读取项目说明，并保存你的笔记文件。</p></article>
+        <article class="card step"><span class="num">03</span><h3>发送第一篇日志</h3><p>把一段真实记录交给 AI，请它给你一个明天就能试的小建议。</p></article>
+      </div>
+      <pre>请帮我看看这段记录：哪些内容是已经发生的事，哪些只是我的猜测？
+再给我一个下次可以试的简单做法。
+
+日志：今天本来要完成方案，但我一直整理资料，直到晚上也没开始正文。</pre>
+      <div class="card step" style="margin-top:16px"><span class="num">04</span><h3>下次补充结果</h3><pre>上次建议：[做了 / 没做 / 做了一部分]
+结果：[发生了什么]
+判断：[这个建议有帮助 / 没有帮助 / 还不确定]</pre></div>
+      <div class="flow" aria-label="从记录到验证的过程"><span>写下发生的事</span><b>→</b><span>想想可能原因</span><b>→</b><span>试一个小做法</span><b>→</b><span>记录结果</span><b>→</b><span>看看有没有用</span></div>
+    </div></section>
+
+    <section id="features" style="background:#edf4f1"><div class="wrap">
+      <div class="eyebrow">它能帮你做什么</div><h2>处理眼前的问题，也回顾一段时间的经历</h2>
+      <p class="intro">你可以只记录一件最近发生的事，也可以在积累了一些记录后，回顾一周、一个月或一个项目，看看什么做法有效、什么问题反复出现。</p>
+      <div class="grid">
+        <article class="card"><h3>帮你想清一件最近的事</h3><p>当你遇到一件想不明白的事，或想改变一个小习惯时用。例如想做事却迟迟没开始、总是熬夜，或某段关系让你反复不舒服。它会帮你找一个值得关注的点，并给出一个下次可以试的做法。</p></article>
+        <article class="card"><h3>把日志写得更有用</h3><p>当你不知道该写什么、写完也觉得没帮助时用。它只告诉你下一次最值得补充的一类信息，例如当时做了什么或结果怎样。</p></article>
+        <article class="card"><h3>回顾一周、一个月或项目</h3><p>当你想知道一段时间里什么有效、什么总在重复时用。它会把不同日期的记录放在一起看，帮助你决定下一步。</p></article>
+        <article class="card"><h3>重新看看长期方向</h3><p>当目标、精力、关系或生活安排长期互相冲突时用。它不是替你做决定，而是帮你整理现状并设计一个可以尝试的改变。</p></article>
+        <article class="card"><h3>讨论并保存长期想法</h3><p>当你想慢慢想清一个问题时用。先讨论；只有你确认后，才保存为以后可以继续修改的笔记。</p></article>
+        <article class="card"><h3>保存以后想再看的资料</h3><p>当你收藏文章、摘录或链接却常常再也找不到时用。它会保存摘要、关键词和原始链接，方便以后查找。</p></article>
+      </div>
+      <p class="note" style="margin-top:22px"><strong>建议先从一件具体事情开始：</strong>如果还没有试过一个小建议并记录结果，直接做很长的周报或年度总结，通常只会增加阅读量，不一定带来改变。</p>
+    </div></section>
+
+    <section id="extensions"><div class="wrap">
+      <div class="eyebrow">可选集成</div><h2>需要时连接飞书或滴答，减少重复操作</h2>
+      <p class="intro">下面的功能不是开始使用的必需条件，而是为“已经想持续使用”的人减少重复操作。它们默认关闭，是因为要连接你的飞书或滴答账号；每位用户都要自己授权。不要把密码、密钥或隐私内容粘贴进聊天或项目文件。</p>
+      <div class="grid">
+        <article class="card"><span class="tag">可选：默认关闭</span><h3>将重要结果保存到飞书</h3><p><strong>适用场景：</strong>希望在手机和电脑上随时查看已确认保存的回顾、计划或想法。启用后，这些内容会整理到你自己的飞书“知己”文件夹。<br><strong>启用前提：</strong>由你自行决定哪些内容可以进入飞书；电脑里的笔记仍是原始记录。</p><p><a href="setup.html#feishu">查看飞书保存设置</a></p></article>
+        <article class="card"><span class="tag">可选：默认关闭</span><h3>通过飞书机器人在手机记录日志</h3><p><strong>适用场景：</strong>外出或不方便打开 AI 工具时，在手机飞书私聊机器人发送 <code>日志：内容</code>，让电脑上的知己处理并回复每日反馈。<br><strong>启用前提：</strong>Windows 电脑、网络和监听程序必须保持在线；目前通常需要等待 2–5 分钟。</p><p><a href="setup.html#mobile">查看手机记录入口设置</a></p></article>
+        <article class="card"><span class="tag">可选：默认关闭</span><h3>将下一步加入滴答清单</h3><p><strong>适用场景：</strong>希望把反馈中的明确行动保存为待办事项，避免之后忘记。启用后，行动会进入“知己行动”清单并附上截止时间。<br><strong>边界：</strong>它不会读取、修改或判断你其他任务是否完成；结果仍由你的下一篇日志记录。</p><p><a href="setup.html#ticktick">查看滴答 / TickTick 设置</a></p></article>
+      </div>
+      <details><summary>我到底需要下载或准备什么？</summary><p><strong>开始使用时只需要：</strong>一个能打开完整项目目录、读取说明并保存笔记文件的 AI 工具，建议 Codex 或 Claude Code。<br><strong>只有想用额外功能时才需要：</strong>飞书账号与企业自建应用权限、滴答/TickTick 账号、相应 AI 服务商账号。HTML 页面本身不需要安装或启动任何软件。</p></details>
+      <details><summary>Claude、DeepSeek 也能用吗？</summary><p>可以，但需要按照部署指南完成设置，并由你在官方页面授权。当前最容易直接使用的是 Codex；如果改用 Claude、DeepSeek 或其他服务，请把详细部署说明交给能操作本机文件和命令的 AI 工具。</p><p><a href="docs/feishu-ai-deployment.md">查看飞书 AI 部署指南</a></p></details>
+    </div></section>
+
+    <section id="privacy" style="background:#edf4f1"><div class="wrap">
+      <div class="eyebrow">使用时请记住</div><h2>AI 可以帮你整理，但不能替你下结论</h2>
+      <div class="grid"><article class="card"><h3>不要把它当诊断</h3><p>知己不诊断心理或医疗问题，也不替你决定人生。信息不够时，它应该少下结论，而不是编出一个看似完整的解释。</p></article><article class="card"><h3>只提供愿意交出的内容</h3><p>真实日志默认不进 Git（代码版本记录），但这不等于加密或访问控制。不要写入不愿交给当前 AI 服务处理的内容。</p></article><article class="card"><h3>连接外部工具不会改坏本地记录</h3><p>飞书和滴答需要单独设置，失败时也只影响那一项；电脑里的笔记不会因此被删除或撤回。</p></article></div>
+    </div></section>
+  </main>
+  <footer><div class="wrap">知己 · <a href="guide.html">用户版完整说明</a> · 本页无需网络，可直接双击打开。</div></footer>
+</body>
+</html>
