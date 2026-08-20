@@ -26,7 +26,7 @@ allowed_tools: Read, Glob, Write
 1. 先读取 `.claude/shared/paths.md`，所有输入输出路径以它为准。
 2. 读取 `.claude/shared/contracts/review-synthesis.md`，遵守复盘六问、方向锚点缺席检查和周报深度契约。
 3. 读取 `.claude/shared/contracts/evidence-and-verification.md`，遵守证据规则和验证沉淀消费规则。
-4. 默认走分层快路径：先消费每日反馈、`context.verified_patterns`、`context.current` 与传入的视角分析；只有引用缺失、证据冲突或方向锚点来源不足时，才按需读取原始日志、核心画像、`docs/analysis-standards.md` 或 `docs/methodology-review.md`。
+4. 默认走分层快路径：先消费每日反馈、`context.verified_patterns`、`context.current` 与传入的视角分析；只有引用缺失、证据冲突或方向锚点来源不足时，才按需读取原始日志或核心画像。
 
 ## 执行步骤
 

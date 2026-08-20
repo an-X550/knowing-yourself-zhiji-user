@@ -178,6 +178,8 @@ argv 顺序固定为 `drive`, `+import`, `--file`, workspace-relative path, `--t
 
 `ticktick.region = dida365` 只绑定滴答清单中国区官方 MCP；`ticktick.region = ticktick` 只绑定 TickTick 国际区官方 MCP，不能跨区回退或猜测。进入渠道前必须确认官方 MCP 已授权，并按输入/输出 schema 做语义发现：候选操作必须且只能创建一项任务。只有找到**恰好一个**已授权的 create-task 候选才可绑定；零个或多个候选都返回配置错误，不猜工具名。
 
+平台绑定必须在工具注入层落实 create-only，而不能只依赖提示词。WorkBuddy 中国区当前工具名固定为 `dida365_create_task`；其自定义 MCP 配置必须通过 `disabledTools` 禁用本次发现的所有其他 `dida365_*` 工具，重连后再核对实际允许集合恰好只有这一项。其他 Agent 平台可以使用不同工具名或本地命令适配器，但也必须在模型可调用边界只暴露一个等价的创建操作，并把远端结果规范化为 success/failed、`task_id` 与错误分类。若平台不能证明这一点，返回 `create_capability_ambiguous`，不进入滴答调用；不得启动 Codex 子进程、借用其他 Agent 额度或回退到任意 HTTP 脚本。
+
 正式分发只允许 create-task 写入，禁止绑定或调用任务的 list/get/search/update/complete/delete，以及任何历史、习惯或完成状态查询能力。唯一例外是首次设置或用户明确重新绑定时，可列出清单一次以取得唯一“知己行动”的 `project_id`；该结果只写入忽略的本地配置，不读取清单内任务。系统不根据第三方状态评价用户，也不建立回写、双向同步或自动复盘。完成判断只读取后续日志，不读取滴答状态。
 
 只有四类来源可以产生滴答任务：`output.daily_feedback`、`output.weekly_report`、`output.monthly_report`、`context.thinking_topic`。项目复盘、年度回顾、人生设计、收藏及其他来源对 TickTick 返回 `skipped_not_supported`；它们已有的本地生成和飞书分发不受影响。普通对话中用户直接要求创建滴答任务时，直接调用滴答能力，不经过知己的报告分发和状态。

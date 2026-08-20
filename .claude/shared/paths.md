@@ -34,7 +34,6 @@ last_updated: 2026-07-11
 | `context.collection_topic` | `关于我/收藏吃灰库/{topic}/{title}.md` | 单篇收藏内容；主题由用户明确指定 |
 | `context.collection_attachment` | `关于我/收藏吃灰库/{topic}/{filename}` | 用户明确收录并先复制到对应主题目录的附件；不得直接引用项目外路径 |
 | `standards.analysis` | `docs/analysis-standards.md` | 分析质量标准 |
-| `standards.review_methodology` | `docs/methodology-review.md` | 复盘方法论 |
 | `perspective.definition` | `perspectives/{视角名}.md` | 视角定义 |
 | `analysis.monthly_perspective` | `关于我/Analysis/{视角}/YYYY-MM-{视角}.md` | 月度视角分析中间产物 |
 | `analysis.yearly_perspective` | `关于我/Analysis/{视角}/[YEAR]-{视角}.md` | 年度综合回读的视角分析 |
@@ -49,10 +48,13 @@ last_updated: 2026-07-11
 | `output.monthly_report` | `复盘/每月复盘/YYYY-MM.md` | `monthly-synthesis` |
 | `output.project_report` | `复盘/项目复盘/YYYY-MM-DD-project-{project}.md` | `project-synthesis` |
 | `output.yearly_report` | `复盘/年度回顾/YYYY-annual-review.md` | `yearly-synthesis` |
-| `output.life_design_report` | `复盘/人生设计/YYYY-MM-DD-life-design[-{topic}].md` | `life-design-synthesis` |
+| `output.life_design_report` | `复盘/人生设计/YYYY-MM-DD-life-design.md` | `life-design-synthesis` |
 | `output.result_distribution_config` | `复盘/.result-distribution-config.json` | 用户从示例复制后按需启用；默认不存在 |
 | `output.result_distribution_state` | `复盘/.result-distribution-state.json` | 结果分发契约按渠道记录幂等状态 |
 | `output.readiness_delivery_state` | `复盘/.readiness-delivery-state.md` | `review-readiness-checker` 的 delivery 模式 |
+| `output.local_feishu_entry_config` | `复盘/.local-feishu-daily-feedback-config.json` | 用户从示例复制后设置唯一 open_id 与可执行路径 |
+| `output.local_feishu_entry_state` | `复盘/.local-feishu-daily-feedback-state.json` | 本地飞书入口记录最小消息防重状态 |
+| `output.local_feishu_entry_runtime_log` | `复盘/.local-feishu-daily-feedback-runtime.log` | 只记录时间、阶段、规范化错误码和截断诊断，不保存日志或反馈正文 |
 | `output.perspective_analysis` | `关于我/Analysis/{视角}/YYYY-MM-{视角}.md` | `monthly-processor` |
 
 ## 上下文文件

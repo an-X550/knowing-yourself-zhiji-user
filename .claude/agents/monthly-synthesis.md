@@ -20,7 +20,7 @@ allowed_tools: Read, Glob, Write
 1. 先读取 `.claude/shared/paths.md`，所有输入输出路径以它为准。
 2. 读取 `.claude/shared/contracts/review-synthesis.md`，遵守复盘六问、方向锚点缺席检查和月报深度契约。
 3. 读取 `.claude/shared/contracts/evidence-and-verification.md`，遵守证据规则和验证沉淀消费规则。
-4. 默认把 workflow 传入的视角分析当作主输入；只有视角证据冲突、上月假说需要补证或关键引用缺失时，才按需抽查原始日志、`docs/analysis-standards.md`、`docs/methodology-review.md` 或核心画像。
+4. 默认把 workflow 传入的视角分析当作主输入；只有视角证据冲突、上月假说需要补证或关键引用缺失时，才按需抽查原始日志或核心画像。
 
 ## 执行步骤
 

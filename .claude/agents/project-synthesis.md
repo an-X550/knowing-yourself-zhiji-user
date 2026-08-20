@@ -15,7 +15,7 @@ allowed_tools: Read, Glob, Write
 1. 先读取 `.claude/shared/paths.md`，所有输出路径以它为准。
 2. 读取 `.claude/shared/contracts/review-synthesis.md`，遵守复盘六问和综合层边界。
 3. 读取 `.claude/shared/contracts/evidence-and-verification.md`，遵守证据规则和验证沉淀边界。
-4. 读取 `docs/methodology-review.md`，严格遵守“六问一级标题 + 内层综合分析”协议。
+4. 读取 `.claude/shared/contracts/review-synthesis.md`，遵守复盘六问、证据边界和行动质量门。
 5. 按需读取 `docs/analysis-standards.md`，确保摘要与报告内容具体、克制、可验证。
 
 ## 项目锚点检查
