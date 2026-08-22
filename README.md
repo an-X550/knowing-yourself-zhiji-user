@@ -4,13 +4,13 @@
 
 > 把日常记录变成更可靠的行动：看见模式，试一个小改变，再用结果校准认识。
 
-GitHub：[knowing-yourself-zhiji-user](https://github.com/an-X550/knowing-yourself-zhiji-user) · 产品总入口：[Reflectloop](https://github.com/an-X550/Reflectloop) · Windows Agent：[Reflectloop-Desktop-Agent](https://github.com/an-X550/Reflectloop-Desktop-Agent) · DSH 插件：[zhiji-dsh-plugin](https://github.com/an-X550/zhiji-dsh-plugin)
+GitHub：[Reflectloop-Agent-Skill](https://github.com/an-X550/Reflectloop-Agent-Skill) · 产品总入口：[Reflectloop](https://github.com/an-X550/Reflectloop) · Windows Agent：[Reflectloop-Desktop-Agent](https://github.com/an-X550/Reflectloop-Desktop-Agent) · DSH 插件：[Reflectloop-DSH-Plugin](https://github.com/an-X550/Reflectloop-DSH-Plugin)
 
 ## 先判断这个仓库是否适合你
 
 - 适合：你想在自己的文件夹中保存日志和复盘，并用 Codex 或 Claude 读取这套 Markdown 工作区；你愿意自己决定哪些内容写入、分发或验证。
 - 不适合：你只想双击一个 Windows 应用；请使用 [ReflectLoop Desktop Agent](https://github.com/an-X550/Reflectloop-Desktop-Agent)。
-- 不适合：你已经在 DeepSeek Harness 中运行；请使用 [ReflectLoop DSH Plugin](https://github.com/an-X550/zhiji-dsh-plugin)。
+- 不适合：你已经在 DeepSeek Harness 中运行；请使用 [ReflectLoop DSH Plugin](https://github.com/an-X550/Reflectloop-DSH-Plugin)。
 - 这不是主仓库的源码镜像。它是给最终用户安装和使用的分发包；本地 Markdown 是本工作区的记录权威，不能假设它会与其他仓库或其他入口自动同步。
 
 ## 知己是什么

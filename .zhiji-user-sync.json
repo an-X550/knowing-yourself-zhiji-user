@@ -1,5 +1,5 @@
 {
-  "sourceRepo": "knowing-yourself",
+  "sourceRepo": "Reflectloop",
   "managedBy": "scripts/export-zhiji-user.ps1",
   "refreshCommand": "powershell -ExecutionPolicy Bypass -File scripts/export-zhiji-user.ps1",
   "syncModel": "single-source-of-truth",
