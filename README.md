@@ -1,16 +1,16 @@
-# ReflectLoop Agent Skill（知己用户版）
+# zhiji Agent Skill（知己用户版）
 
 > 这是面向最终用户的可安装 Agent Skill 分发工作区：下载或复制完整目录，用 Codex 或 Claude 打开后，把真实记录交给知己完成“发现模式 → 形成行动 → 后续验证”。第一次使用请直接打开 [用户上手页](index.html)；浏览器版完整说明见 [用户使用说明](guide.html)。
 
 > 把日常记录变成更可靠的行动：看见模式，试一个小改变，再用结果校准认识。
 
-GitHub：[Reflectloop-Agent-Skill](https://github.com/an-X550/Reflectloop-Agent-Skill) · 产品总入口：[Reflectloop](https://github.com/an-X550/Reflectloop) · Windows Agent：[Reflectloop-Desktop-Agent](https://github.com/an-X550/Reflectloop-Desktop-Agent) · DSH 插件：[Reflectloop-DSH-Plugin](https://github.com/an-X550/Reflectloop-DSH-Plugin)
+GitHub：[zhiji-Agent-Skill](https://github.com/an-X550/zhiji-Agent-Skill) · 产品总入口：[zhiji](https://github.com/an-X550/zhiji) · Windows Agent：[zhiji-Desktop-Agent](https://github.com/an-X550/zhiji-Desktop-Agent) · DSH 插件：[zhiji-DSH-Plugin](https://github.com/an-X550/zhiji-DSH-Plugin)
 
 ## 先判断这个仓库是否适合你
 
 - 适合：你想在自己的文件夹中保存日志和复盘，并用 Codex 或 Claude 读取这套 Markdown 工作区；你愿意自己决定哪些内容写入、分发或验证。
-- 不适合：你只想双击一个 Windows 应用；请使用 [ReflectLoop Desktop Agent](https://github.com/an-X550/Reflectloop-Desktop-Agent)。
-- 不适合：你已经在 DeepSeek Harness 中运行；请使用 [ReflectLoop DSH Plugin](https://github.com/an-X550/Reflectloop-DSH-Plugin)。
+- 不适合：你只想双击一个 Windows 应用；请使用 [zhiji Desktop Agent](https://github.com/an-X550/zhiji-Desktop-Agent)。
+- 不适合：你已经在 DeepSeek Harness 中运行；请使用 [zhiji DSH Plugin](https://github.com/an-X550/zhiji-DSH-Plugin)。
 - 这不是主仓库的源码镜像。它是给最终用户安装和使用的分发包；本地 Markdown 是本工作区的记录权威，不能假设它会与其他仓库或其他入口自动同步。
 
 ## 知己是什么
